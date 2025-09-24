@@ -8,11 +8,12 @@ import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Background from "@/components/Background";
-
+import { Input } from "@/components/ui/input";
+import './signup.module.css'
 const poppins = Poppins({
-  subsets: ["latin"],   // choose subsets you need
-  weight: ["400", "500", "600", "700"], // choose weights
-  variable: "--font-poppins", // (optional) for Tailwind usage
+    subsets: ["latin"],
+    weight: ["400", "500", "600", "700"],
+    variable: "--font-poppins",
 });
 
 export default function SignupPage() {
@@ -40,27 +41,41 @@ export default function SignupPage() {
 
     return (
         <>
-            <Background />
-            <div className={`min-h-screen font-poppins w-full bg-white text-slate-900 ${poppins.className}`}>
-                <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 p-6 md:grid-cols-2">
+            <div>
+                <Background />
+            </div>
+            <div
+                className={`min-h-screen font-poppins w-full bg-white text-slate-900 ${poppins.className}`}
+            >
+                <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 md:p-6 md:grid-cols-2">
                     {/* Left: visual */}
-                    <div className="mt-32 hidden relative  md:block h-[580px]">
+                    <div className="xl:mt-20 lg:mt-32 md:mt-52 hidden relative md:block h-[480px] lg:h-[550px] xl:h-[600px] lg:w-[420px] xl:w-full md:w-[360px]">
                         <Image
                             src="https://my.messagemind.ai/signup-sl-en-2.png"
                             alt="MessageMind Support Illustration"
                             width={520}
                             height={600}
-                            className=" h-full absolute lg:left-28"
+                            className="h-full z-20 absolute lg:left-28 md:left-10"
                             priority
                         />
                     </div>
 
                     {/* Right: form */}
-                    <div className="flex items-center justify-center px-6 py-10 sm:px-10 h-full">
+                    <div className="flex relative items-center justify-center px-6 py-10 sm:px-10 h-full">
                         <div className="w-full max-w-[480px]">
                             <h1 className="text-2xl font-semibold tracking-tight">
                                 Create Account
                             </h1>
+                            <div className="absolute top-12 right-12 h-[120px] border-l-1 border-dashed opacity-20"></div>
+                            <div>
+                                <Image
+                                    src="/logo.webp"   // path relative to public/
+                                    alt="Logo"
+                                    width={120}
+                                    height={80}
+                                    className="absolute top-28 right-14"
+                                />
+                            </div>
                             <p className="mt-2 text-sm text-slate-600">
                                 You’re just a few steps away! Sign up and unlock 24/7 customer
                                 support with MessageMind.
@@ -73,29 +88,27 @@ export default function SignupPage() {
                                 {/* Name row */}
                                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                     <div>
-                                        <input
+                                        <Input
                                             placeholder="First Name*"
-                                            className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                             {...register("firstName", {
                                                 required: "First name is required",
                                             })}
                                         />
                                         {errors.firstName && (
-                                            <p className="text-sm ml-2 text-rose-600">
+                                            <p className="text-xs ml-2 text-rose-600 mt-1">
                                                 {errors.firstName.message}
                                             </p>
                                         )}
                                     </div>
                                     <div>
-                                        <input
+                                        <Input
                                             placeholder="Last Name*"
-                                            className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                             {...register("lastName", {
                                                 required: "Last name is required",
                                             })}
                                         />
                                         {errors.lastName && (
-                                            <p className="text-sm ml-2 text-rose-600">
+                                            <p className="text-xs ml-2 text-rose-600 mt-1">
                                                 {errors.lastName.message}
                                             </p>
                                         )}
@@ -104,15 +117,14 @@ export default function SignupPage() {
 
                                 {/* Company */}
                                 <div>
-                                    <input
+                                    <Input
                                         placeholder="Company Name*"
-                                        className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                         {...register("company", {
                                             required: "Company name is required",
                                         })}
                                     />
                                     {errors.company && (
-                                        <p className="text-sm ml-2 text-rose-600">
+                                        <p className="text-xs ml-2 text-rose-600 mt-1">
                                             {errors.company.message}
                                         </p>
                                     )}
@@ -130,16 +142,16 @@ export default function SignupPage() {
                                                 value={value}
                                                 onChange={onChange}
                                                 enableSearch
+                                                dropdownClass='dropdown-container transition duration-300 ease-in-out'
                                                 containerClass="w-full"
-                                                inputClass="!w-full !rounded-2xl !border !border-pink-400/60 !px-4 !py-1.5 !placeholder-slate-400 focus:!ring-2 focus:!ring-pink-400/50"
-                                                buttonClass="!border-0 !bg-transparent !px-2"
-                                                dropdownClass="!rounded-2xl !shadow-lg !border !border-slate-200"
-                                                searchClass="!rounded-md !border !border-slate-300 !px-2 !py-1"
+                                                inputClass="!w-full !rounded-3xl !border !border-pink-400/60 !px-12 !placeholder-slate-400 focus:!ring-2 focus:!ring-pink-400/50"
+                                                containerStyle={{ width: '100%' }}
+                                                buttonClass="!border-0 !px-2 !py-2 !bg-transparent"
                                             />
                                         )}
                                     />
                                     {errors.phone && (
-                                        <p className=" ml-2 text-sm text-rose-600">
+                                        <p className="ml-2 text-xs text-rose-600 mt-1">
                                             {errors.phone.message}
                                         </p>
                                     )}
@@ -147,10 +159,9 @@ export default function SignupPage() {
 
                                 {/* Email */}
                                 <div>
-                                    <input
+                                    <Input
                                         type="email"
                                         placeholder="Email Address*"
-                                        className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                         {...register("email", {
                                             required: "Email is required",
                                             pattern: {
@@ -160,7 +171,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.email && (
-                                        <p className="text-sm ml-2 text-rose-600">
+                                        <p className="text-xs ml-2 text-rose-600 mt-1">
                                             {errors.email.message}
                                         </p>
                                     )}
@@ -168,10 +179,9 @@ export default function SignupPage() {
 
                                 {/* Password */}
                                 <div>
-                                    <input
+                                    <Input
                                         type="password"
                                         placeholder="Password*"
-                                        className="w-full rounded-2xl  border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                         {...register("password", {
                                             required: "Password is required",
                                             minLength: {
@@ -181,7 +191,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.password && (
-                                        <p className="text-sm ml-2 text-rose-600">
+                                        <p className="text-xs ml-2 text-rose-600 mt-1">
                                             {errors.password.message}
                                         </p>
                                     )}
@@ -189,10 +199,9 @@ export default function SignupPage() {
 
                                 {/* Confirm Password */}
                                 <div>
-                                    <input
+                                    <Input
                                         type="password"
                                         placeholder="Confirm Password*"
-                                        className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                         {...register("confirmPassword", {
                                             required: "Please confirm your password",
                                             validate: (val) =>
@@ -200,23 +209,20 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.confirmPassword && (
-                                        <p className="text-sm ml-2 text-rose-600">
+                                        <p className="text-xs ml-2 text-rose-600 mt-1">
                                             {errors.confirmPassword.message}
                                         </p>
                                     )}
                                 </div>
 
                                 {/* Terms */}
-                                <div className="flex items-start gap-3 pt-1">
+                                <div className="flex items-start gap-1 pt-1">
                                     <input
                                         id="terms"
                                         type="checkbox"
-                                        className="mt-1 h-4 w-4 rounded border border-pink-400/60 text-[#EA4B98] focus:ring-[#EA4B98]"
-                                        {...register("terms", {
-                                            required: "You must accept Terms & Privacy",
-                                        })}
+                                        className="mt-0.5 h-3 w-3 rounded border border-pink-400/60 text-[#EA4B98] focus:ring-[#EA4B98]"
                                     />
-                                    <label htmlFor="terms" className="text-sm text-slate-600">
+                                    <label htmlFor="terms" className="text-xs text-slate-600">
                                         By signing up, you agree to our{" "}
                                         <Link
                                             href="/terms"
@@ -234,17 +240,12 @@ export default function SignupPage() {
                                         .
                                     </label>
                                 </div>
-                                {errors.terms && (
-                                    <p className="-mt-1 ml-2 text-sm text-rose-600">
-                                        {errors.terms.message}
-                                    </p>
-                                )}
 
                                 {/* Button */}
                                 <button
                                     type="submit"
                                     disabled={submitting}
-                                    className="mt-2 w-full rounded-2xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#EA4B98] px-6 py-3 font-semibold text-white shadow-lg transition hover:brightness-105 active:brightness-95 disabled:opacity-50"
+                                    className="mt-1 w-full cursor-pointer rounded-3xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#EA4B98] px-6 py-2 font-semibold text-white shadow-lg transition hover:brightness-105 active:brightness-95 disabled:opacity-50"
                                 >
                                     {submitting ? "Creating..." : "Create Account"}
                                 </button>
@@ -256,4 +257,5 @@ export default function SignupPage() {
         </>
     );
 }
+
 
