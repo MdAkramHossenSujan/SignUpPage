@@ -44,12 +44,12 @@ export default function SignupPage() {
     return (
         <div className={`min-h-screen w-full bg-white text-slate-900 ${poppins.className}`}>
             {/* 50/50 split — left: form, right: image */}
-            <div className="mx-auto grid min-h-screen max-w-[1400px] grid-cols-1 md:grid-cols-2">
+            <div className="mx-auto grid min-h-screen max-w-[1580px] grid-cols-1 md:grid-cols-2">
                 {/* LEFT: logo, socials, form */}
                 <div className="flex min-h-screen items-center justify-center px-6 py-10 sm:px-10 order-1">
-                    <div className="w-full relative max-w-[420px] space-y-2">
+                    <div className="w-full max-w-[580px] space-y-2">
                         {/* Logo */}
-                        <div className="absolute -top-56 right-6 z-5 justify-center">
+                        <div className="flex justify-center">
                             <Image src="/png-02.png" alt="Logo" width={350} height={80} priority />
                         </div>
 
@@ -96,7 +96,7 @@ export default function SignupPage() {
                                     <Input
                                         id="firstName"
                                         placeholder="First Name*"
-                                        className="px-4 py-2 md:px-4 z-20 md:py-2"
+                                        className="px-4 py-2 md:px-4 z-20 md:py-3"
                                         {...register("firstName", { required: "First name is required" })}
                                     />
                                     {errors.firstName && (
@@ -107,7 +107,7 @@ export default function SignupPage() {
                                     <Input
                                         id="lastName"
                                         placeholder="Last Name*"
-                                        className="px-4 py-2 md:px-4 md:py-2"
+                                        className="px-4 py-2 md:px-4 md:py-3"
                                         {...register("lastName", { required: "Last name is required" })}
                                     />
                                     {errors.lastName && (
@@ -121,7 +121,7 @@ export default function SignupPage() {
                                 <Input
                                     id="company"
                                     placeholder="Company Name*"
-                                    className="px-4 py-2 md:px-4 md:py-2"
+                                    className="px-4 py-2 md:px-4 md:py-3"
                                     {...register("company", { required: "Company name is required" })}
                                 />
                                 {errors.company && (
@@ -130,7 +130,7 @@ export default function SignupPage() {
                             </div>
 
                             {/* Phone */}
-                            <div className="group rounded-3xl border border-pink-400/60 transition focus-within:ring-2 focus-within:ring-pink-400/30">
+                            <div className="group rounded-2xl py-2 border border-pink-400 transition focus-within:ring-2 focus-within:ring-pink-400/30">
                                 <Controller
                                     name="phone"
                                     control={control}
@@ -158,7 +158,7 @@ export default function SignupPage() {
                                     id="email"
                                     type="email"
                                     placeholder="Email Address*"
-                                    className="px-4 py-2 md:px-3 md:py-2"
+                                    className="px-4 py-2 md:px-3 md:py-3"
                                     {...register("email", {
                                         required: "Email is required",
                                         pattern: { value: /[^\s@]+@[^\s@]+\.[^\s@]+/, message: "Enter a valid email" },
@@ -175,7 +175,7 @@ export default function SignupPage() {
                                     id="password"
                                     type="password"
                                     placeholder="Password*"
-                                    className="px-4 py-2 md:px-3 md:py-1.5"
+                                    className="px-4 py-2 md:px-3 md:py-3"
                                     {...register("password", {
                                         required: "Password is required",
                                         minLength: { value: 8, message: "Must be at least 8 characters" },
@@ -192,7 +192,7 @@ export default function SignupPage() {
                                     id="confirmPassword"
                                     type="password"
                                     placeholder="Confirm Password*"
-                                    className="px-4 py-4 md:px-3 md:py-1.5"
+                                    className="px-4 py-4 md:px-3 md:py-3"
                                     {...register("confirmPassword", {
                                         required: "Please confirm your password",
                                         validate: (val) => val === passwordValue || "Passwords must match",
@@ -249,7 +249,7 @@ export default function SignupPage() {
 
                 {/* RIGHT: image (centered, 70% height) */}
                 <div className="relative hidden md:flex items-center justify-center order-2">
-                    <div className="h-[70vh] w-auto max-w-[90%]">
+                    <div className="h-[75vh] w-auto max-w-[100%]">
                         <Image
                             src="https://my.messagemind.ai/signup-sl-en-2.png"
                             alt="MessageMind Support Illustration"

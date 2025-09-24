@@ -47,12 +47,12 @@ export default function SignupPage() {
 
     return (
         <div className={`min-h-screen w-full bg-white text-slate-900 ${poppins.className}`}>
-            <div className="mx-auto grid min-h-screen max-w-[1400px] grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 px-6 md:px-10 py-8">
+            <div className="mx-auto grid min-h-screen max-w-[1580px] grid-cols-1 md:grid-cols-2 gap-6 px-6 md:px-10 py-8">
                 {/* LEFT SIDE */}
                 <div className="order-1 flex min-h-screen items-center justify-center">
-                    <div className="w-full relative max-w-[460px] space-y-5">
+                    <div className="w-full max-w-[580px] space-y-5">
                         {/* Logo */}
-                        <div className="absolute -top-48 right-18 z-5 justify-center">
+                        <div className="flex justify-center">
                             <Image src="/png-02.png" alt="Logo" width={300} height={60} priority />
                         </div>
 
@@ -69,21 +69,21 @@ export default function SignupPage() {
                         <div className="space-y-2">
                             <button
                                 type="button"
-                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-2.5 shadow-sm transition hover:bg-slate-50"
+                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-3 shadow-sm transition hover:bg-slate-50"
                             >
                                 <FcGoogle className="h-5 w-5" />
                                 <span className="text-sm font-medium text-slate-700">Continue with Google</span>
                             </button>
                             <button
                                 type="button"
-                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-2.5 shadow-sm transition hover:bg-slate-50"
+                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-3 shadow-sm transition hover:bg-slate-50"
                             >
                                 <FaFacebookF className="h-5 w-5 text-[#1877F2]" />
                                 <span className="text-sm font-medium text-slate-700">Continue with Facebook</span>
                             </button>
                             <button
                                 type="button"
-                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-2.5 shadow-sm transition hover:bg-slate-50"
+                                className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-300 bg-white py-3 shadow-sm transition hover:bg-slate-50"
                             >
                                 <FaLinkedinIn className="h-5 w-5 text-[#0A66C2]" />
                                 <span className="text-sm font-medium text-slate-700">Continue with LinkedIn</span>
@@ -288,7 +288,7 @@ export default function SignupPage() {
 
                 {/* RIGHT SIDE → IMAGE */}
                 <div className="order-2 hidden md:flex items-center justify-center">
-                    <div className="h-[70vh] w-auto max-w-[90%]">
+                    <div className="h-[75vh] w-auto max-w-[100%]">
                         <Image
                             src="https://my.messagemind.ai/signup-sl-en-2.png"
                             alt="MessageMind Support Illustration"
