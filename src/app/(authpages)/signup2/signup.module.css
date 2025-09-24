@@ -1,0 +1,74 @@
+:global(.react-tel-input .country-list .search-box) {
+  border: 1px solid #e799c1;
+  border-radius: 14px;
+  outline: none;
+  width: 80%;
+  margin-left: 12px;
+  padding: 5px 14px 5px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+:global(.react-tel-input .country-list) {
+  z-index: 1;
+  background-color: #fff;
+  border-radius: 18px;
+  outline: none;
+  max-height: 180px;
+  margin: 10px -5px 8px;
+  padding: 0;
+  border: 1px solid #eeacce;
+  list-style: none;
+  position: absolute;
+  left: 0px;         /* dropdown always matches parent width */
+  overflow-y: auto;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, .35);
+}
+
+/* Responsive max-width if you still want to clamp it */
+@media (min-width: 400px) {
+  :global(.react-tel-input .country-list) {
+    width: 200px;
+  }
+}
+@media (min-width: 680px) {
+  :global(.react-tel-input .country-list) {
+    width: 290px;
+  }
+}
+@media (min-width: 890px) {
+  :global(.react-tel-input .country-list) {
+    width: 360px;
+  }
+}
+@media (min-width: 1000px) {
+  :global(.react-tel-input .country-list) {
+    width: 400px;
+  }
+}
+@media (min-width: 1100px) {
+  :global(.react-tel-input .country-list) {
+    width: 472px;
+  }
+}
+
+
+:global(.react-tel-input .country-list .country) {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 16px;
+  cursor: pointer;
+  border-top: 1px solid #f0f0f0;
+}
+:global(.react-tel-input .country-list .country:hover) {
+  background-color: #f9f9f9;
+}
+:global(.dropdown-container) {
+    scrollbar-width: thin;
+    scrollbar-color: #db82b0 #eedede;
+    cursor: pointer;
+}
+:global(.dropdown-container::-webkit-scrollbar-thumb) {
+  background-color: rgba(244, 114, 182, 0.5);
+  cursor: pointer;
+}

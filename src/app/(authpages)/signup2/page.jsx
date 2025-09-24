@@ -7,7 +7,6 @@ import { useForm, Controller } from "react-hook-form";
 import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-import Background from "@/components/Background";
 import { Input } from "@/components/ui/input";
 import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -44,32 +43,33 @@ export default function SignupPage() {
 
     return (
         <>
-
             {/* Top-center logo */}
-            <div className="fixed top-8 left-1/2 z-30 -translate-x-1/2">
+            <div className="fixed top-6 left-1/2 z-30 -translate-x-1/2">
                 <Image src="/logo.webp" alt="Logo" width={140} height={80} priority />
             </div>
 
-            <div className={`min-h-screen w-full bg-white text-slate-900 ${poppins.className}`}>
-                <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 md:grid-cols-2 md:p-6">
-                    {/* Left: visual */}
-                    <div className="relative hidden md:block">
-                        <div className="absolute inset-0 flex items-center justify-center">
+            <div className={`min-h-screen w-full bg-white text-slate-900 p-6 ${poppins.className}`}>
+                {/* 50/50 split from md and up */}
+                <div className="mx-auto grid min-h-screen max-w-[1400px] grid-cols-1 md:grid-cols-2">
+                    {/* LEFT HALF: centered image at 70% height */}
+                    <div className="relative hidden md:flex items-center justify-center">
+                        <div className="h-[70vh] w-auto">
                             <Image
                                 src="https://my.messagemind.ai/signup-sl-en-2.png"
                                 alt="MessageMind Support Illustration"
-                                width={520}
+                                width={600}
                                 height={600}
-                                className="max-h-[600px] w-auto object-contain"
+                                className="h-full w-auto object-contain"
                                 priority
                             />
                         </div>
                     </div>
 
-                    {/* Right: form card */}
-                    <div className="relative flex items-center justify-center px-6 py-10 sm:px-10">
+
+                    {/* RIGHT HALF: form pane */}
+                    <div className="flex min-h-screen items-center justify-center px-6 py-10 sm:px-10">
                         <div className="w-full max-w-[520px]">
-                            <div className="rounded-3xl border border-pink-400/10 bg-white/80 p-6 shadow-xl backdrop-blur-sm md:p-5">
+                            <div className="rounded-3xl border border-pink-400/10 bg-white/90 p-6 shadow-xl backdrop-blur-sm md:p-5">
                                 <header className="mb-4 text-center md:text-left">
                                     <h1 className="text-3xl font-semibold tracking-tight md:text-2xl">
                                         Create Account
@@ -126,7 +126,7 @@ export default function SignupPage() {
                                     </div>
 
                                     {/* Phone */}
-                                    <div className="group rounded-3xl border border-pink-400/60 px-3 py-1.5 transition focus-within:ring-2 focus-within:ring-pink-400/50 md:px-2.5 md:py-1">
+                                    <div className="group rounded-3xl border border-pink-400/60 transition focus-within:ring-2 focus-within:ring-pink-400/30 md:px-2">
                                         <label className="sr-only" htmlFor="phone">Phone</label>
                                         <Controller
                                             name="phone"
@@ -140,7 +140,7 @@ export default function SignupPage() {
                                                     enableSearch
                                                     containerClass="w-full"
                                                     buttonClass="!border-0 !bg-transparent !px-2"
-                                                    inputClass="!w-full !bg-transparent !border-0 !outline-none !px-12 !py-1.5 md:!py-1 placeholder:text-slate-400 placeholder:opacity-50"
+                                                    inputClass="!w-full !bg-transparent !border-0 !outline-none !px-12 placeholder:text-slate-400 placeholder:opacity-50"
                                                 />
                                             )}
                                         />
@@ -211,7 +211,7 @@ export default function SignupPage() {
                                         <input
                                             id="terms"
                                             type="checkbox"
-                                            className="mt-0.5 ml-2 h-3.5 w-3.5 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98] focus:ring-[#EA4B98]"
+                                            className="mt-0.5 h-3.5 w-3.5 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98] focus:ring-[#EA4B98]"
                                             {...register("terms", { required: "You must accept Terms & Privacy" })}
                                         />
                                         <label htmlFor="terms" className="text-xs leading-snug text-slate-600">
@@ -239,8 +239,8 @@ export default function SignupPage() {
                                         {submitting ? "Creating…" : "Create Account"}
                                     </button>
 
-                                    {/* Divider */}
-                                    <div className="relative">
+                                    {/* Divider + social */}
+                                    <div className="relative my-4">
                                         <div className="absolute inset-0 flex items-center">
                                             <div className="w-full border-t border-slate-200"></div>
                                         </div>
@@ -248,24 +248,25 @@ export default function SignupPage() {
                                             <span className="bg-white px-3 text-sm text-slate-500">OR</span>
                                         </div>
                                     </div>
-                                    {/* Social buttons - circular */}
+
                                     <div className="flex justify-center gap-4">
                                         <button
                                             type="button"
+                                            aria-label="Continue with Google"
                                             className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-pink-300/40"
                                         >
                                             <FcGoogle className="h-5 w-5" />
                                         </button>
-
                                         <button
                                             type="button"
+                                            aria-label="Continue with Facebook"
                                             className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-pink-300/40"
                                         >
                                             <FaFacebookF className="h-5 w-5 text-[#1877F2]" />
                                         </button>
-
                                         <button
                                             type="button"
+                                            aria-label="Continue with LinkedIn"
                                             className="flex h-12 w-12 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-pink-300/40"
                                         >
                                             <FaLinkedinIn className="h-5 w-5 text-[#0A66C2]" />
@@ -273,9 +274,6 @@ export default function SignupPage() {
                                     </div>
                                 </form>
                             </div>
-
-                            {/* Decorative vertical dashed guide (kept subtle) */}
-                            <div className="pointer-events-none absolute right-12 top-12 hidden h-[120px] border-l border-dashed border-pink-400/60 opacity-20 md:block" />
                         </div>
                     </div>
                 </div>
