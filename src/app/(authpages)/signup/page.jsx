@@ -1,5 +1,6 @@
 "use client";
 
+import { Poppins } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import { useForm, Controller } from "react-hook-form";
@@ -7,6 +8,12 @@ import { useState } from "react";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import Background from "@/components/Background";
+
+const poppins = Poppins({
+  subsets: ["latin"],   // choose subsets you need
+  weight: ["400", "500", "600", "700"], // choose weights
+  variable: "--font-poppins", // (optional) for Tailwind usage
+});
 
 export default function SignupPage() {
     const [submitting, setSubmitting] = useState(false);
@@ -34,7 +41,7 @@ export default function SignupPage() {
     return (
         <>
             <Background />
-            <div className="min-h-screen w-full bg-white text-slate-900">
+            <div className={`min-h-screen font-poppins w-full bg-white text-slate-900 ${poppins.className}`}>
                 <div className="mx-auto grid min-h-screen max-w-7xl grid-cols-1 p-6 md:grid-cols-2">
                     {/* Left: visual */}
                     <div className="mt-32 hidden relative  md:block h-[580px]">
@@ -74,7 +81,7 @@ export default function SignupPage() {
                                             })}
                                         />
                                         {errors.firstName && (
-                                            <p className="text-sm text-rose-600">
+                                            <p className="text-sm ml-2 text-rose-600">
                                                 {errors.firstName.message}
                                             </p>
                                         )}
@@ -88,7 +95,7 @@ export default function SignupPage() {
                                             })}
                                         />
                                         {errors.lastName && (
-                                            <p className="text-sm text-rose-600">
+                                            <p className="text-sm ml-2 text-rose-600">
                                                 {errors.lastName.message}
                                             </p>
                                         )}
@@ -105,7 +112,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.company && (
-                                        <p className="text-sm text-rose-600">
+                                        <p className="text-sm ml-2 text-rose-600">
                                             {errors.company.message}
                                         </p>
                                     )}
@@ -132,7 +139,7 @@ export default function SignupPage() {
                                         )}
                                     />
                                     {errors.phone && (
-                                        <p className="mt-1 text-sm text-rose-600">
+                                        <p className=" ml-2 text-sm text-rose-600">
                                             {errors.phone.message}
                                         </p>
                                     )}
@@ -153,7 +160,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.email && (
-                                        <p className="text-sm text-rose-600">
+                                        <p className="text-sm ml-2 text-rose-600">
                                             {errors.email.message}
                                         </p>
                                     )}
@@ -164,7 +171,7 @@ export default function SignupPage() {
                                     <input
                                         type="password"
                                         placeholder="Password*"
-                                        className="w-full rounded-2xl border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
+                                        className="w-full rounded-2xl  border border-pink-400/60 px-4 py-1.5 placeholder-slate-400 focus:ring-2 focus:ring-pink-400/50"
                                         {...register("password", {
                                             required: "Password is required",
                                             minLength: {
@@ -174,7 +181,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.password && (
-                                        <p className="text-sm text-rose-600">
+                                        <p className="text-sm ml-2 text-rose-600">
                                             {errors.password.message}
                                         </p>
                                     )}
@@ -193,7 +200,7 @@ export default function SignupPage() {
                                         })}
                                     />
                                     {errors.confirmPassword && (
-                                        <p className="text-sm text-rose-600">
+                                        <p className="text-sm ml-2 text-rose-600">
                                             {errors.confirmPassword.message}
                                         </p>
                                     )}
@@ -228,7 +235,7 @@ export default function SignupPage() {
                                     </label>
                                 </div>
                                 {errors.terms && (
-                                    <p className="-mt-1 text-sm text-rose-600">
+                                    <p className="-mt-1 ml-2 text-sm text-rose-600">
                                         {errors.terms.message}
                                     </p>
                                 )}
@@ -237,7 +244,7 @@ export default function SignupPage() {
                                 <button
                                     type="submit"
                                     disabled={submitting}
-                                    className="mt-4 w-full rounded-2xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#EA4B98] px-6 py-3 font-semibold text-white shadow-lg transition hover:brightness-105 active:brightness-95 disabled:opacity-50"
+                                    className="mt-2 w-full rounded-2xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#EA4B98] px-6 py-3 font-semibold text-white shadow-lg transition hover:brightness-105 active:brightness-95 disabled:opacity-50"
                                 >
                                     {submitting ? "Creating..." : "Create Account"}
                                 </button>
