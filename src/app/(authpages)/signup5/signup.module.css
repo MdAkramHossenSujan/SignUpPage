@@ -1,0 +1,80 @@
+:global(.react-tel-input .country-list .search-box) {
+  border: 1px solid #f472b6;
+  border-radius: 14px;
+  outline: none;
+  width: 80%;
+  margin-left: 12px;
+  margin-bottom: 2px;
+  padding: 5px 14px 5px;
+  font-size: 12px;
+  line-height: 10px;
+}
+/* Dropdown: anchor + responsive width */
+:global(.react-tel-input .country-list) {
+  box-sizing: border-box;
+  /* Your styling */
+    margin: 8px -4px 8px;
+  border: 1px solid #f472b6;     /* tailwind pink-400 */
+  border-radius: 12px;
+  max-height: 170px;
+  overflow-y: auto;
+  background: #fff;
+  z-index: 50;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
+}
+
+/* Tailwind-like breakpoints to mirror your form’s width */
+@media (min-width: 700px) {      /* sm */
+  :global(.react-tel-input .country-list) { width: 278px !important; }
+}
+@media (min-width: 800px) {      /* sm */
+  :global(.react-tel-input .country-list) { width: 305px !important; }
+}
+@media (min-width: 880px) {      /* md */
+  :global(.react-tel-input .country-list) { width: 350px !important; }
+}
+@media (min-width: 960px) {      /* md */
+  :global(.react-tel-input .country-list) { width: 380px !important; }
+}
+@media (min-width: 1080px) {     /* lg */
+  :global(.react-tel-input .country-list) { width: 430px !important; } /* matches form max */
+}
+@media (min-width: 1300px) {     /* 2xl (keep same as form) */
+  :global(.react-tel-input .country-list) { width: 438px !important; }
+}
+:global(.react-tel-input .country-list .country) {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-top: 1px solid #f3f4f6; /* slate-100 */
+}
+:global(.react-tel-input .country-list .country:hover) {
+  background: #fafafa;
+}
+
+/* Optional: thin pink scrollbar */
+:global(.react-tel-input .country-list) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244,114,182,.5) transparent;
+}
+
+:global(.react-tel-input .country-list .country) {
+  padding: 10px 14px;
+  font-size: 14px;
+  line-height: 12px;
+  cursor: pointer;
+  border-top: 1px solid #f0f0f0;
+}
+:global(.react-tel-input .country-list .country:hover) {
+  background-color: #f9f9f9;
+}
+/* signup.module.css */
+.autofillFix:-webkit-autofill,
+.autofillFix:-webkit-autofill:hover,
+.autofillFix:-webkit-autofill:focus,
+.autofillFix:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  box-shadow: 0 0 0px 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #0f172a !important;
+  caret-color: #0f172a;
+  transition: background-color 9999s ease-in-out 0s;
+}
