@@ -58,7 +58,7 @@ export default function SignupPage() {
         <Image
           src="/png-02.png"
           alt="MessageMind"
-          width={300} // wider logo
+          width={350} // wider logo
           height={80}
           priority
         />
@@ -85,8 +85,8 @@ export default function SignupPage() {
               <div className="w-full max-w-md mx-auto">
                 {/* Headline */}
                 <div className="text-center md:text-left mb-5">
-                  <h1 className="text-xl font-semibold">Create Your Account</h1>
-                  <p className="mt-1 text-xs text-slate-600">
+                  <h1 className="text-2xl font-semibold">Create Your Account</h1>
+                  <p className="mt-1 text-xs lg:text-sm text-slate-800">
                     Sign up and unlock 24/7 customer support with{" "}
                     <span className="font-medium text-[#EA4B98]">
                       MessageMind
@@ -99,23 +99,23 @@ export default function SignupPage() {
                   <button
                     type="button"
                     aria-label="Continue with Google"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
                   >
-                    <FcGoogle className="h-5 w-5" />
+                    <FcGoogle className="h-6 w-6" />
                   </button>
                   <button
                     type="button"
                     aria-label="Continue with Facebook"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
                   >
-                    <FaFacebookF className="h-4 w-4 text-[#1877F2]" />
+                    <FaFacebookF className="h-6 w-6 text-[#1877F2]" />
                   </button>
                   <button
                     type="button"
                     aria-label="Continue with LinkedIn"
-                    className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm transition hover:bg-slate-50"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
                   >
-                    <FaLinkedinIn className="h-4 w-4 text-[#0A66C2]" />
+                    <FaLinkedinIn className="h-6 w-6 text-[#0A66C2]" />
                   </button>
                 </div>
 
@@ -125,7 +125,7 @@ export default function SignupPage() {
                     <div className="w-full border-t border-slate-200" />
                   </div>
                   <div className="relative flex justify-center">
-                    <span className="bg-white px-2 text-[11px] font-medium text-slate-500">
+                    <span className="bg-white px-2 font-semibold text-[12px] text-slate-700">
                       OR CONTINUE WITH EMAIL
                     </span>
                   </div>
@@ -182,7 +182,7 @@ export default function SignupPage() {
                   </div>
 
                   {/* Phone */}
-                  <div className="rounded-2xl border border-pink-400 py-1.5 transition focus-within:ring-2 focus-within:ring-pink-400/30">
+                  <div className="rounded-2xl border border-pink-500 py-1.5 transition focus-within:ring-2 focus-within:ring-pink-400/30">
                     <Controller
                       name="phone"
                       control={control}
@@ -297,7 +297,7 @@ export default function SignupPage() {
                     />
                     <label
                       htmlFor="terms"
-                      className="text-xs leading-snug text-slate-600"
+                      className="text-xs leading-snug text-slate-700"
                     >
                       By signing up, you agree to our{" "}
                       <Link
@@ -326,7 +326,7 @@ export default function SignupPage() {
                     {submitting ? "Creating…" : "Create Account"}
                   </button>
 
-                  <p className="mt-2 text-center text-sm text-slate-600">
+                  <p className="mt-2 text-center text-sm text-slate-800">
                     Already have an account?{" "}
                     <Link
                       href="/login"
@@ -343,8 +343,8 @@ export default function SignupPage() {
       </main>
 
       {/* FOOTER */}
-      <footer className="mt-6 border-slate-200">
-        <div className="mx-auto max-w-[1200px] px-4 py-3 text-center text-sm text-slate-700">
+      <footer className="mt-6">
+        <div className="mx-auto max-w-[1200px] px-4 py-3 text-center text-xs md:text-sm text-slate-800">
           <div className="flex flex-wrap justify-center gap-1">
             <Link href="/privacy" className="hover:text-[#EA4B98]">
               Privacy Policy
@@ -358,7 +358,7 @@ export default function SignupPage() {
               Documentation
             </Link>
           </div>
-          <p className="mt-1 text-xs text-slate-500">
+          <p className="mt-1 text-xs text-slate-600">
             All rights reserved © {new Date().getFullYear()}
           </p>
         </div>
