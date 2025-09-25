@@ -251,7 +251,7 @@ export default function SignupPage() {
                                         <input
                                             id="terms"
                                             type="checkbox"
-                                            className="mt-0.5 h-4 w-4 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98] focus:ring-[#EA4B98]"
+                                            className=" h-4 w-4 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98] focus:ring-[#EA4B98]"
                                             {...register("terms")}
                                         />
                                         <label htmlFor="terms" className="text-xs leading-snug text-slate-600">
