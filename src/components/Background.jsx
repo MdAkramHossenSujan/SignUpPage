@@ -3,13 +3,13 @@ import React from "react";
 
 export default function Background() {
     return (
-        <div>
+        <div className="hidden lg:block">
             <Image
                 src="https://my.messagemind.ai/group-top.png"
                 alt="Profile Picture"
                 width={300}
                 height={300}
-                className="fixed top-0 right-0 z-20"
+                className="fixed top-0 right-0 z-10"
             />
 
             {/* hr below the top image
@@ -20,7 +20,7 @@ export default function Background() {
                 alt="Profile Picture"
                 width={300}
                 height={300}
-                className="fixed bottom-0 left-0 z-20"
+                className="fixed bottom-0 left-0 z-10"
             />
         </div>
     );

@@ -11,6 +11,7 @@ import { Input } from "@/components/ui/input";
 import { FaFacebookF, FaLinkedinIn, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import styles from "./signup.module.css";
+import Background from "@/components/Background";
 
 const poppins = Poppins({
     subsets: ["latin"],
@@ -53,8 +54,9 @@ export default function SignupPage() {
         <div
             className={`flex  flex-col bg-[#fafafa] text-slate-900 ${poppins.className}`}
         >
+            <Background/>
             {/* HEADER */}
-            <header className="py-6 flex justify-center">
+            <div className="py-6 flex justify-center">
                 <Image
                     src="/png-01.png"
                     alt="MessageMind"
@@ -62,10 +64,10 @@ export default function SignupPage() {
                     height={80}
                     priority
                 />
-            </header>
+            </div>
 
             {/* MAIN */}
-            <main className="flex flex-1 items-center justify-center px-4">
+            <section className="flex flex-1 z-20 items-center justify-center px-4">
                 <div className="mx-auto w-full max-w-[1200px]">
                     <div className="grid grid-cols-1 md:grid-cols-2 rounded-2xl bg-white shadow-xl ring-1 shadow-b-x ring-black/5 overflow-hidden">
                         {/* LEFT: Illustration */}
@@ -336,7 +338,7 @@ export default function SignupPage() {
                         </div>
                     </div>
                 </div>
-            </main>
+            </section>
 
             {/* FOOTER */}
             <footer className="mt-6">
