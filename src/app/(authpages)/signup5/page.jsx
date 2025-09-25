@@ -56,9 +56,9 @@ export default function SignupPage() {
             {/* HEADER */}
             <header className="py-6 flex justify-center">
                 <Image
-                    src="/png-02.png"
+                    src="/png-01.png"
                     alt="MessageMind"
-                    width={350} // wider logo
+                    width={280} // wider logo
                     height={80}
                     priority
                 />
@@ -101,7 +101,7 @@ export default function SignupPage() {
                                         aria-label="Continue with Google"
                                         className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white transition hover:bg-slate-50"
                                     >
-                                        <FcGoogle className="h-6 w-6" />
+                                        <FcGoogle className="h-7 w-7" />
                                     </button>
                                     <button
                                         type="button"
