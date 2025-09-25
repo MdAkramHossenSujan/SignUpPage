@@ -12,8 +12,6 @@
 /* Dropdown: anchor + responsive width */
 :global(.react-tel-input .country-list) {
   box-sizing: border-box;
-  /* Your styling */
-    margin: 8px -4px 8px;
   border: 1px solid #f472b6;     /* tailwind pink-400 */
   border-radius: 12px;
   max-height: 185px;
