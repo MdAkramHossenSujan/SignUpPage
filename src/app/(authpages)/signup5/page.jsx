@@ -30,6 +30,7 @@ export default function SignupPage() {
         control,
         watch,
         formState: { errors },
+        reset,
     } = useForm({ mode: "onBlur" });
 
     const termsChecked = watch("terms");
@@ -45,6 +46,7 @@ export default function SignupPage() {
         try {
             console.log("Signup payload", values);
             alert("Submitted!");
+            reset()
         } finally {
             setSubmitting(false);
         }
@@ -52,7 +54,7 @@ export default function SignupPage() {
 
     return (
         <div
-            className={`flex  flex-col bg-[#fafafa] text-slate-900 ${poppins.className}`}
+            className={`flex flex-col bg-[#fafafa] text-slate-900 ${poppins.className}`}
         >
             <Background/>
             {/* HEADER */}
@@ -184,7 +186,7 @@ export default function SignupPage() {
                                     </div>
 
                                     {/* Phone */}
-                                    <div className="rounded-2xl border border-pink-500 py-1.5 transition focus-within:ring-2 focus-within:ring-pink-400/30">
+                                    <div className="rounded-xl border border-pink-400 py-1.5 transition focus-within:ring-2 focus-within:ring-pink-400/30">
                                         <Controller
                                             name="phone"
                                             control={control}
