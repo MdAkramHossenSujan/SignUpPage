@@ -16,7 +16,7 @@
     margin: 8px -4px 8px;
   border: 1px solid #f472b6;     /* tailwind pink-400 */
   border-radius: 12px;
-  max-height: 170px;
+  max-height: 185px;
   overflow-y: auto;
   background: #fff;
   z-index: 50;
@@ -66,15 +66,4 @@
 }
 :global(.react-tel-input .country-list .country:hover) {
   background-color: #f9f9f9;
-}
-/* signup.module.css */
-.autofillFix:-webkit-autofill,
-.autofillFix:-webkit-autofill:hover,
-.autofillFix:-webkit-autofill:focus,
-.autofillFix:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 1000px #ffffff inset !important;
-  box-shadow: 0 0 0px 1000px #ffffff inset !important;
-  -webkit-text-fill-color: #0f172a !important;
-  caret-color: #0f172a;
-  transition: background-color 9999s ease-in-out 0s;
 }
