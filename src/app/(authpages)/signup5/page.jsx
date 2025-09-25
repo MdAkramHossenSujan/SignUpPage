@@ -86,7 +86,7 @@ export default function SignupPage() {
                 {/* Headline */}
                 <div className="text-center md:text-left mb-5">
                   <h1 className="text-2xl font-semibold">Create Your Account</h1>
-                  <p className="mt-1 text-xs lg:text-sm text-slate-800">
+                  <p className="mt-1 text-xs lg:text-[13px] text-black">
                     Sign up and unlock 24/7 customer support with{" "}
                     <span className="font-medium text-[#EA4B98]">
                       MessageMind
@@ -125,7 +125,7 @@ export default function SignupPage() {
                     <div className="w-full border-t border-slate-200" />
                   </div>
                   <div className="relative flex justify-center">
-                    <span className="bg-white px-2 font-semibold text-[12px] text-slate-700">
+                    <span className="bg-white px-2 font-semibold md:text-xs lg:text-sm text-black">
                       OR CONTINUE WITH EMAIL
                     </span>
                   </div>

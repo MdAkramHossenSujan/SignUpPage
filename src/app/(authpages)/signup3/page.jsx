@@ -91,7 +91,7 @@ export default function SignupPage() {
                                         <div className="w-full border-t border-slate-200" />
                                     </div>
                                     <div className="relative flex justify-center">
-                                        <span className="bg-white px-3 font-semibold text-[12px] tracking-wide text-slate-700">
+                                        <span className="bg-white px-3 font-semibold text-[12px] lg:text-sm tracking-wide text-black">
                                             OR CONTINUE WITH EMAIL
                                         </span>
                                     </div>
@@ -145,7 +145,7 @@ export default function SignupPage() {
                                     </div>
 
                                     {/* Phone */}
-                                    <div className="rounded-2xl border py-1.5 border-pink-400 transition focus-within:ring-2 focus-within:ring-pink-400/30">
+                                    <div className="rounded-2xl border py-1.5 border-pink-500 transition focus-within:ring-2 focus-within:ring-pink-400/30">
                                         <Controller
                                             name="phone"
                                             control={control}
@@ -254,7 +254,7 @@ export default function SignupPage() {
                                             className=" h-4 w-4 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98] focus:ring-[#EA4B98]"
                                             {...register("terms")}
                                         />
-                                        <label htmlFor="terms" className="text-xs leading-snug text-slate-600">
+                                        <label htmlFor="terms" className="text-xs leading-snug text-black">
                                             By signing up, you agree to our{" "}
                                             <Link href="/terms" className="font-medium text-[#EA4B98] hover:underline">
                                                 Terms
@@ -278,7 +278,7 @@ export default function SignupPage() {
                                     </button>
 
                                     {/* Already have account */}
-                                    <p className="mt-2 text-center text-sm text-slate-600">
+                                    <p className="mt-2 text-center text-sm text-black">
                                         Already have an account?{" "}
                                         <Link href="/login" className="font-medium text-[#EA4B98] hover:underline">
                                             Log in
@@ -308,15 +308,15 @@ export default function SignupPage() {
 
             {/* FOOTER */}
             <footer className="w-full border-slate-200">
-                <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1760px] px-6 md:px-8 xl:px-10 2xl:px-12 py-3 text-center text-sm text-slate-800">
+                <div className="mx-auto max-w-[1400px] xl:max-w-[1600px] 2xl:max-w-[1760px] px-6 md:px-8 xl:px-10 2xl:px-12 py-3 text-center text-sm text-black">
                     <div className="flex flex-wrap justify-center gap-2">
                         <Link href="/privacy" className="hover:text-[#EA4B98]">Privacy Policy</Link>
-                        <span className="text-slate-300">|</span>
+                        <span className="text-slate-400">|</span>
                         <Link href="/terms" className="hover:text-[#EA4B98]">Terms and Conditions</Link>
-                        <span className="text-slate-300">|</span>
+                        <span className="text-slate-400">|</span>
                         <Link href="/docs" className="hover:text-[#EA4B98]">Documentation</Link>
                     </div>
-                    <p className="mt-1 text-xs text-slate-700">
+                    <p className="mt-1 text-xs text-slate-800">
                         All rights reserved © {new Date().getFullYear()}
                     </p>
                 </div>
