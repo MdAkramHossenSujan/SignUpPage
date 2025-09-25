@@ -3,7 +3,7 @@
   border-radius: 14px;
   outline: none;
   width: 80%;
-  margin-left: 12px;
+  margin-left: 16px;
   margin-bottom: 2px;
   padding: 5px 14px 5px;
   font-size: 12px;
@@ -14,7 +14,8 @@
   box-sizing: border-box;
   border: 1px solid #f472b6;     /* tailwind pink-400 */
   border-radius: 12px;
-  max-height: 185px;
+  margin: 8px -6px 8px;
+  max-height: 180px;
   overflow-y: auto;
   background: #fff;
   z-index: 50;
@@ -23,22 +24,10 @@
 
 /* Tailwind-like breakpoints to mirror your form’s width */
 @media (min-width: 700px) {      /* sm */
-  :global(.react-tel-input .country-list) { width: 278px !important; }
-}
-@media (min-width: 800px) {      /* sm */
-  :global(.react-tel-input .country-list) { width: 305px !important; }
-}
-@media (min-width: 880px) {      /* md */
-  :global(.react-tel-input .country-list) { width: 350px !important; }
-}
-@media (min-width: 960px) {      /* md */
-  :global(.react-tel-input .country-list) { width: 380px !important; }
+  :global(.react-tel-input .country-list) { width: 320px !important; }
 }
 @media (min-width: 1080px) {     /* lg */
   :global(.react-tel-input .country-list) { width: 430px !important; } /* matches form max */
-}
-@media (min-width: 1300px) {     /* 2xl (keep same as form) */
-  :global(.react-tel-input .country-list) { width: 438px !important; }
 }
 :global(.react-tel-input .country-list .country) {
   padding: 10px 14px;
