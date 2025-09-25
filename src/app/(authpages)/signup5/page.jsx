@@ -10,7 +10,7 @@ import "react-phone-input-2/lib/style.css";
 import { Input } from "@/components/ui/input";
 import { FaFacebookF, FaLinkedinIn, FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import "./signup.module.css";
+import styles from "./signup.module.css";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -138,7 +138,7 @@ export default function SignupPage() {
                     <div>
                       <Input
                         placeholder="First Name*"
-                        className="px-4 py-2.5"
+                         className={`px-4 py-2.5 ${styles.autofillFix}`}
                         {...register("firstName", {
                           required: "First name is required",
                         })}
@@ -152,7 +152,7 @@ export default function SignupPage() {
                     <div>
                       <Input
                         placeholder="Last Name*"
-                        className="px-4 py-2.5"
+                         className={`px-4 py-2.5 ${styles.autofillFix}`}
                         {...register("lastName", {
                           required: "Last name is required",
                         })}
@@ -169,7 +169,7 @@ export default function SignupPage() {
                   <div>
                     <Input
                       placeholder="Company Name*"
-                      className="px-4 py-2.5"
+                       className={`px-4 py-2.5 ${styles.autofillFix}`}
                       {...register("company", {
                         required: "Company name is required",
                       })}
@@ -195,7 +195,7 @@ export default function SignupPage() {
                           enableSearch
                           containerClass="w-full"
                           buttonClass="!border-0 !bg-transparent !px-2"
-                          inputClass="!w-full !bg-transparent !border-0 !outline-none !px-12 !py-2.5 placeholder:opacity-50"
+                          inputClass={`!w-full !bg-transparent !border-0 !outline-none !px-12 !py-2.5 placeholder:opacity-50 ${styles.autofillFix}`}
                         />
                       )}
                     />
@@ -211,7 +211,7 @@ export default function SignupPage() {
                     <Input
                       type="email"
                       placeholder="Email Address*"
-                      className="px-4 py-2.5"
+                      className={`px-4 py-2.5 ${styles.autofillFix}`}
                       {...register("email", {
                         required: "Email is required",
                         pattern: {
@@ -233,7 +233,7 @@ export default function SignupPage() {
                       <Input
                         type={showPassword ? "text" : "password"}
                         placeholder="Password*"
-                        className="px-4 py-2.5 pr-10"
+                         className={`px-4 py-2.5 ${styles.autofillFix}`}
                         {...register("password", {
                           required: "Password is required",
                           minLength: {
@@ -264,7 +264,7 @@ export default function SignupPage() {
                       <Input
                         type={showConfirmPassword ? "text" : "password"}
                         placeholder="Confirm Password*"
-                        className="px-4 py-2.5 pr-10"
+                        className={`px-4 py-2.5 ${styles.autofillFix}`}
                         {...register("confirmPassword", {
                           required: "Please confirm your password",
                           validate: (val) =>
