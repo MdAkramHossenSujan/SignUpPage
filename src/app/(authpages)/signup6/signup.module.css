@@ -14,7 +14,6 @@
   box-sizing: border-box;
   border: 1px solid #f472b6;     /* tailwind pink-400 */
   border-radius: 12px;
-  margin: 8px -6px 8px;
   max-height: 180px;
   overflow-y: auto;
   background: #fff;
@@ -27,7 +26,7 @@
   :global(.react-tel-input .country-list) { width: 320px !important; }
 }
 @media (min-width: 1080px) {     /* lg */
-  :global(.react-tel-input .country-list) { width: 430px !important; } /* matches form max */
+  :global(.react-tel-input .country-list) { width: 425px !important; } /* matches form max */
 }
 :global(.react-tel-input .country-list .country) {
   padding: 10px 14px;
