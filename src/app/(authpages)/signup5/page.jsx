@@ -229,7 +229,7 @@ export default function SignupPage() {
                                             <Input
                                                 type={showPassword ? "text" : "password"}
                                                 placeholder="Password*"
-                                                className={`px-4 py-2.5 ${styles.autofillFix}`}
+                                                className=" px-4 py-2.5 autofill:bg-white autofill:text-slate-900 autofill:shadow-[inset_0_0_0_1000px_white]"
                                                 {...register("password", {
                                                     required: "Password is required",
                                                     minLength: {
@@ -260,7 +260,7 @@ export default function SignupPage() {
                                             <Input
                                                 type={showConfirmPassword ? "text" : "password"}
                                                 placeholder="Confirm Password*"
-                                                className={`px-4 py-2.5 autofill:bg-white`}
+                                                className=" px-4 py-2.5 autofill:bg-white autofill:text-slate-900 autofill:shadow-[inset_0_0_0_1000px_white]"
                                                 {...register("confirmPassword", {
                                                     required: "Please confirm your password",
                                                     validate: (val) =>
