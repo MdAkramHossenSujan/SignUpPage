@@ -147,7 +147,7 @@ export default function SignupPage() {
                         {...register("firstName", { required: "First name is required" })}
                       />
                       {errors.firstName && (
-                        <p className="ml-1 mt-1 text-[10px] text-rose-600">
+                        <p className="ml-2 mt-0.5 text-[11px] text-red-600">
                           {errors.firstName.message}
                         </p>
                       )}
@@ -159,7 +159,7 @@ export default function SignupPage() {
                         {...register("lastName", { required: "Last name is required" })}
                       />
                       {errors.lastName && (
-                        <p className="ml-1 mt-1 text-[10px] text-rose-600">
+                        <p className="ml-2 mt-0.5 text-[11px] text-red-600">
                           {errors.lastName.message}
                         </p>
                       )}
@@ -174,7 +174,7 @@ export default function SignupPage() {
                       {...register("company", { required: "Company name is required" })}
                     />
                     {errors.company && (
-                      <p className="ml-1 mt-1 text-[10px] text-rose-600">
+                        <p className="ml-2 mt-0.5 text-[11px] text-red-600">
                         {errors.company.message}
                       </p>
                     )}
@@ -200,7 +200,7 @@ export default function SignupPage() {
                     />
                   </div>
                   {errors.phone && (
-                    <p className="ml-1 -mt-1 text-[10px] text-rose-600">
+                     <p className="ml-2 -mt-2 text-[11px] text-red-600">
                       {errors.phone.message}
                     </p>
                   )}
@@ -218,7 +218,7 @@ export default function SignupPage() {
                       })}
                     />
                     {errors.email && (
-                      <p className="ml-1 mt-1 text-[10px] text-rose-600">
+                      <p className="ml-2 mt-0.5 text-[11px] text-red-600">
                         {String(errors.email.message)}
                       </p>
                     )}
@@ -246,7 +246,7 @@ export default function SignupPage() {
                       </button>
                     </div>
                     {errors.password && (
-                      <p className="ml-1 text-[10px] text-rose-600">{errors.password.message}</p>
+                       <p className="ml-2 mt-0.5 text-[11px] text-red-600">{errors.password.message}</p>
                     )}
                   </div>
 
@@ -272,7 +272,7 @@ export default function SignupPage() {
                       </button>
                     </div>
                     {errors.confirmPassword && (
-                      <p className="ml-1 text-[10px] text-rose-600">
+                        <p className="ml-2 mt-0.5 text-[11px] text-red-600">
                         {errors.confirmPassword.message}
                       </p>
                     )}
@@ -304,7 +304,7 @@ export default function SignupPage() {
                   </button>
 
                   {/* Login link */}
-                  <div className="bg-blue-50 py-2 rounded-lg">
+                  <div className="bg-blue-50 py-3 rounded-lg">
                     <p className="text-center text-[13px]">
                       Already have an account?{" "}
                       <Link href="/login" className="font-medium text-[#EA4B98] hover:underline">
