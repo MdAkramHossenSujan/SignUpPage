@@ -99,21 +99,21 @@ export default function SignupPage() {
                                     <button
                                         type="button"
                                         aria-label="Continue with Google"
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white transition hover:bg-slate-50"
                                     >
                                         <FcGoogle className="h-6 w-6" />
                                     </button>
                                     <button
                                         type="button"
                                         aria-label="Continue with Facebook"
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white transition hover:bg-slate-50"
                                     >
                                         <FaFacebookF className="h-6 w-6 text-[#1877F2]" />
                                     </button>
                                     <button
                                         type="button"
                                         aria-label="Continue with LinkedIn"
-                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-400 bg-white shadow-sm transition hover:bg-slate-50"
+                                        className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-300 bg-white transition hover:bg-slate-50"
                                     >
                                         <FaLinkedinIn className="h-6 w-6 text-[#0A66C2]" />
                                     </button>
@@ -286,12 +286,12 @@ export default function SignupPage() {
                                         <input
                                             id="terms"
                                             type="checkbox"
-                                            className=" h-4 w-4 cursor-pointer rounded border border-pink-400/60 text-[#EA4B98] accent-[#EA4B98]"
+                                            className=" h-4 w-4 cursor-pointer rounded-2xl accent-[#EA4B98]"
                                             {...register("terms", { required: true })}
                                         />
                                         <label
                                             htmlFor="terms"
-                                            className="text-xs leading-snug text-slate-800"
+                                            className="text-xs leading-snug text-black"
                                         >
                                             By signing up, you agree to our{" "}
                                             <Link
@@ -320,7 +320,8 @@ export default function SignupPage() {
                                         {submitting ? "Creating…" : "Create Account"}
                                     </button>
 
-                                    <p className="mt-2 text-center text-sm text-slate-800">
+                                   <div className="bg-blue-50 py-3 rounded-xl">
+                                     <p className=" text-center text-sm">
                                         Already have an account?{" "}
                                         <Link
                                             href="/login"
@@ -329,6 +330,7 @@ export default function SignupPage() {
                                             Log in
                                         </Link>
                                     </p>
+                                   </div>
                                 </form>
                             </div>
                         </div>
@@ -338,7 +340,7 @@ export default function SignupPage() {
 
             {/* FOOTER */}
             <footer className="mt-6">
-                <div className="mx-auto max-w-[1200px] px-4 pt-6 text-center text-xs md:text-sm text-slate-900">
+                <div className="mx-auto max-w-[1200px] px-4 pt-3 text-center text-xs md:text-sm text-slate-900">
                     <div className="flex flex-wrap justify-center gap-1">
                         <Link href="/privacy" className="hover:text-[#EA4B98]">
                             Privacy Policy
