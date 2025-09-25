@@ -51,7 +51,7 @@ export default function SignupPage() {
 
   return (
     <div
-      className={`flex min-h-screen flex-col bg-[#fafafa] text-slate-900 ${poppins.className}`}
+      className={`flex  flex-col bg-[#fafafa] text-slate-900 ${poppins.className}`}
     >
       {/* HEADER */}
       <header className="py-6 flex justify-center">
@@ -297,12 +297,12 @@ export default function SignupPage() {
                     />
                     <label
                       htmlFor="terms"
-                      className="text-xs leading-snug text-slate-700"
+                      className="text-xs leading-snug text-slate-800"
                     >
                       By signing up, you agree to our{" "}
                       <Link
                         href="/terms"
-                        className="font-medium text-[#EA4B98] hover:underline"
+                        className="font-medium text-[#d43e87] hover:underline"
                       >
                         Terms
                       </Link>{" "}
@@ -344,7 +344,7 @@ export default function SignupPage() {
 
       {/* FOOTER */}
       <footer className="mt-6">
-        <div className="mx-auto max-w-[1200px] px-4 py-3 text-center text-xs md:text-sm text-slate-800">
+        <div className="mx-auto max-w-[1200px] px-4 pt-6 text-center text-xs md:text-sm text-slate-900">
           <div className="flex flex-wrap justify-center gap-1">
             <Link href="/privacy" className="hover:text-[#EA4B98]">
               Privacy Policy
@@ -358,7 +358,7 @@ export default function SignupPage() {
               Documentation
             </Link>
           </div>
-          <p className="mt-1 text-xs text-slate-600">
+          <p className="mt-1 text-xs text-black">
             All rights reserved © {new Date().getFullYear()}
           </p>
         </div>
