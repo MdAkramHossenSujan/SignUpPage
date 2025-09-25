@@ -4,53 +4,56 @@
   outline: none;
   width: 80%;
   margin-left: 12px;
+  margin-bottom: 4px;
   padding: 5px 14px 5px;
   font-size: 12px;
   line-height: 16px;
 }
-
+/* Dropdown: anchor + responsive width */
 :global(.react-tel-input .country-list) {
-  z-index: 1;
-  background-color: #fff;
-  border-radius: 18px;
-  outline: none;
-  max-height: 180px;
-  margin: 10px 4px 8px;
-  padding: 0;
-  border: 1px solid #f472b6;
-  list-style: none;
-  position: absolute;
-  left: 0px;         /* dropdown always matches parent width */
+  box-sizing: border-box;
+  /* Your styling */
+    margin: 20px -4px 8px;
+  border: 1px solid #f472b6;     /* tailwind pink-400 */
+  border-radius: 12px;
+  max-height: 184px;
   overflow-y: auto;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, .35);
+  background: #fff;
+  z-index: 50;
+  box-shadow: 0 6px 18px rgba(0,0,0,.15);
 }
 
-/* Responsive max-width if you still want to clamp it */
-@media (min-width: 400px) {
-  :global(.react-tel-input .country-list) {
-    width: 250px;
-  }
+/* Tailwind-like breakpoints to mirror your form’s width */
+@media (min-width: 700px) {      /* sm */
+  :global(.react-tel-input .country-list) { width: 330px !important; }
 }
-@media (min-width: 680px) {
-  :global(.react-tel-input .country-list) {
-    width: 295px;
-  }
+@media (min-width: 800px) {      /* sm */
+  :global(.react-tel-input .country-list) { width: 360px !important; }
 }
-@media (min-width: 810px) {
-  :global(.react-tel-input .country-list) {
-    width: 320px;
-  }
+@media (min-width: 908px) {      /* md */
+  :global(.react-tel-input .country-list) { width: 460px !important; }
 }
-@media (min-width: 900px) {
-  :global(.react-tel-input .country-list) {
-    width: 380px;
-  }
+@media (min-width: 1080px) {     /* lg */
+  :global(.react-tel-input .country-list) { width: 522px !important; } /* matches form max */
 }
-@media (min-width: 1000px) {
-  :global(.react-tel-input .country-list) {
-    width: 410px;
-  }
+@media (min-width: 1300px) {     /* 2xl (keep same as form) */
+  :global(.react-tel-input .country-list) { width: 610px !important; }
 }
+:global(.react-tel-input .country-list .country) {
+  padding: 10px 14px;
+  font-size: 14px;
+  border-top: 1px solid #f3f4f6; /* slate-100 */
+}
+:global(.react-tel-input .country-list .country:hover) {
+  background: #fafafa;
+}
+
+/* Optional: thin pink scrollbar */
+:global(.react-tel-input .country-list) {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(244,114,182,.5) transparent;
+}
+
 :global(.react-tel-input .country-list .country) {
   padding: 10px 14px;
   font-size: 14px;
@@ -60,13 +63,4 @@
 }
 :global(.react-tel-input .country-list .country:hover) {
   background-color: #f9f9f9;
-}
-:global(.dropdown-container) {
-    scrollbar-width: thin;
-    scrollbar-color: #db82b0 #eedede;
-    cursor: pointer;
-}
-:global(.dropdown-container::-webkit-scrollbar-thumb) {
-  background-color: rgba(244, 114, 182, 0.5);
-  cursor: pointer;
 }

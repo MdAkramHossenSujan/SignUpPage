@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <div className='flex justify-center items-center h-screen flex-col gap-5'>
         <h1 className='font-bold text-3xl'>Hello,Below is the link of the Sign Up page.</h1>
-        <Link className='border-b-2 italic' href={'/signup'}>Sign Up</Link>
+        <Link className='border-b-2 italic' href={'/signup3'}>Sign Up</Link>
       </div>
     </>
   );
