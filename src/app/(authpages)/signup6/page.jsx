@@ -298,13 +298,13 @@ export default function SignupPage() {
                   <button
                     type="submit"
                     disabled={ctaDisabled}
-                    className="mt-1 w-full rounded-2xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#EA4B98] px-5 py-2 text-[14px] font-semibold text-white shadow-md transition hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="my-2 w-full rounded-2xl bg-gradient-to-r from-[#F6722B] via-[#EA4B98] to-[#b83675] px-5 py-2.5 text-[14px] font-semibold text-white shadow-md transition hover:scale-[1.01] active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {submitting ? "Creating…" : "Create Account"}
                   </button>
 
                   {/* Login link */}
-                  <div className="bg-blue-50 py-3 rounded-lg">
+                  <div className="bg-blue-50 py-2 mt-1 rounded-lg">
                     <p className="text-center text-[13px]">
                       Already have an account?{" "}
                       <Link href="/login" className="font-medium text-[#EA4B98] hover:underline">
